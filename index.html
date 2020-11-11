@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+  </head>
+  <body>
+    <h1>Simple</h1>
+    <script>
+      console.log("JS starts.");
+      console.log(d3);
+      d3.csv("http://localhost:8000/data.csv").then(function (raw_data) {
+        console.log(raw_data);
+        var data = [];
+        for (var i = 0; i < raw_data.length; i++) {
+          data[i] = [];
+          data[i].name = raw_data[i].name;
+          data[i].value = raw_data[i].value;
+        }
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>
